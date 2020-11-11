@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="person" class="com.abc.di07.Person">
+        <property name="name" value="张三"></property>
+        <!--<property name="age" value="23"></property>-->
+        <property name="age" value="#{T(java.lang.Math).random() * 50}"></property>
+    </bean>
+
+    <bean id="student" class="com.abc.di07.Student">
+        <property name="name" value="#{person.name}"/>
+        <!--<property name="age" value="#{person.age}"/>-->
+        <property name="age" value="#{person.computeAge()}"/>
+    </bean>
+</beans>
+

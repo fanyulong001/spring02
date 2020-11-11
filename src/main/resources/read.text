@@ -1,0 +1,66 @@
+IOC
+    Inversion of Control（控制反转），将原来由代码操纵的对象控制权，交由第三方容器，即反转给第三方容器
+  这种对象的依赖关系管理方式，成为IOC
+    IOC是一种思想，这种思想有很多实现方式，比较出名的两种
+  DL：Dependency Lookuo （依赖查找）
+  DI：Dependency Injection（依赖注入）
+一。Bean的装配
+    Bean的配置，就是对象的创建，容器根据代码要求，创建好对象后，再将对象传递给代码的过程。
+  1.默认方式：
+    容器调用bean的无参构造器，创建对象
+  2.动态工厂Bean：
+
+  3.静态工厂Bean；
+
+  4.Bean的作用范围：
+
+  5.Bean后处理器
+    它是被系统自动调用
+
+  6.Bean的生命周期
+
+二。基于XML的DI
+DI：依赖注入，就是为对象的属性赋值。
+  1.设置注入：（常用）
+    调用相关属性的setter方法完成属性赋值的过程
+
+  2.构造器注入：
+    调用相关构造器完成对象创建和属性赋值的过程
+
+  3.命名空间注入：（视频4） （了解即可）
+    (spring-framework》docs》spring-framework-reference》core.html)
+    xmlns:p="http://www.springframework.org/schema/p"  p命名空间注入，设置注入的另一种写法
+    xmlns:c="http://www.springframework.org/schema/c"  c命名空间注入，构造器注入的另一种写法
+
+  4.数组和集合注入：（重点掌握）
+
+
+  5.域属性自动注入：
+    autowire="byName":系统会从容器中查找与域属性 同名 的Bean，将其自动注入。
+    autowire="byType":系统会从容器中查找与域属性同类型的Bean，将其自动注入。
+    另外，系统会从容器中查找与域属性类型具有is-a关系的Bean，将其自动注入。与域属性类型具有is-a关系的Beanb最多一个。
+                                     （父子类，接口实现）
+
+  6.SPEL注入：
+    Spring Expression language，spring EL表达式
+
+  7.为应用指定多个Spring配置文件
+    （1）并列关系：加载配置文件可以采用可变参数、数组、通配符。
+    （2）包含关系：加载主配置文件，主配置文件包含其他配置文件。
+
+三。基于注解的DI
+1.搭建环境
+  （1）导入AOP的jar包
+  （2）配置文件添加context约束
+  （3）在配置文件中注册组件扫描器
+
+2.与@Component注解功能相同，意义不同的注解
+  @Service：注解Service类上
+  @Respository：注解在Dao类上
+  @Controller：注解在SpringMVC的处理器上
+
+3.域属性的自动注入注解
+  （1）byType方式
+  （2）byName方式:要求@Autowired和@Qualifier同时使用，或@Resource(name = "mySchool")
+
+4.其他注解

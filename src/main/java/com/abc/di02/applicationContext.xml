@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mySchool" class="com.abc.di02.School">
+        <property name="sname" value="anyu"/>
+    </bean>
+
+    <bean id="student" class="com.abc.di02.Student">
+        <!--index0、1、2代表索引，按构造函数参数的顺序依次索引-->
+        <!--<constructor-arg index="0" value="张三"/>
+        <constructor-arg index="1" value="23"/>
+        <constructor-arg index="2" ref="mySchool"/>-->
+
+        <!--按名称索引赋值-->
+        <!--<constructor-arg name="name" value="张三"/>-->
+        <!--<constructor-arg name="age" value="23"/>-->
+        <!--<constructor-arg name="school" ref="mySchool"/>-->
+
+        <!--简化形式-->
+        <!--必须满足顺序且一一对应关系-->
+        <!--<constructor-arg  value="张三"/>-->
+        <!--<constructor-arg  value="23"/>-->
+        <!--<constructor-arg ref="mySchool"/>-->
+    </bean>
+</beans>
+

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="anyu" class="com.abc.di05.School">
+        <property name="sname" value="安阳师院"></property>
+    </bean>
+
+    <bean id="hnnu" class="com.abc.di05.School">
+        <property name="sname" value="河南师大"></property>
+    </bean>
+
+    <bean id="some" class="com.abc.di05.Some">
+        <property name="names">
+            <array>
+                <value>张三</value>
+                <value>李四</value>
+            </array>
+        </property>
+
+        <property name="myLisy">
+            <list>
+                <value>张三</value>
+                <value>李四</value>
+            </list>
+        </property>
+
+        <property name="schools">
+            <list>
+                <ref bean="anyu"></ref>
+                <ref bean="hnnu"></ref>
+            </list>
+        </property>
+
+        <property name="mySet">
+            <set>
+                <value>软件工程</value>
+                <value>大数据</value>
+            </set>
+        </property>
+
+        <property name="myMap">
+            <map>
+                <entry key="phone" value="2900"></entry>
+                <entry key="qq" value="6666"></entry>
+            </map>
+        </property>
+
+        <property name="myPros">
+            <props>
+                <prop key="email">tom</prop>
+                <prop key="address">文明大道</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
+

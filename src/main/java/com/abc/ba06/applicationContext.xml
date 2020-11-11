@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--destory-method指定的方法执行需要m满足两个条件
+        1.当前Bean为单例，即scope=“singleton”
+        2.该方法会在容器关闭前执行-->
+    <bean id="someService" class="com.abc.ba06.SomeServiceImpl" init-method="afterInit" destroy-method="beforeDestory" />
+
+</beans>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--scope=prototype,表示当前Bean为原型模式
+    （先创建容器对象，然后每查找一次就创建Bean对象）
+    -->
+    <!--<bean id="someService" class="com.abc.ba04.SomeServiceImpl" scope="prototype" />-->
+
+    <!--scope="singleton",表示当前Bean为单例模式，创建对象的同时创建Bean对象，只创建一次，默认模式
+    scope的取值还可以是：request、session
+    -->
+    <bean id="someService" class="com.abc.ba04.SomeServiceImpl" scope="singleton" />
+</beans>
+

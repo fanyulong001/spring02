@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean id="xxx" class="com.abc.di06.School">-->
+        <!--<property name="sname" value="anyu"/>-->
+    <!--</bean>-->
+
+    <bean id="yyy" class="com.abc.di06.MiddleSchool">
+        <property name="sname" value="安阳一中"></property>
+        <property name="address" value="文明大道"></property>
+    </bean>
+
+    <bean id="student" class="com.abc.di06.Student" autowire="byType">
+        <property name="name" value="张三"/>
+        <property name="age" value="23"/>
+    </bean>
+
+</beans>
+
